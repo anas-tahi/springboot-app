@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | ShopCart</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div th:replace="fragments/navbar :: navbar"></div>
+
+<main class="main-content">
+    <div class="page-header">
+        <h1>🛍️ Products</h1>
+        <div class="header-actions">
+            <span th:if="${lowStockCount > 0}" class="low-stock-alert">
+                ⚠️ <span th:text="${lowStockCount}"></span> item(s) low on stock
+            </span>
+            <a th:href="@{/products/new}" class="btn btn-primary" sec:authorize="isAuthenticated()">+ Add Product</a>
+        </div>
+    </div>
+
+    <div class="products-grid" th:if="${not #lists.isEmpty(products)}">
+        <div class="product-card" th:each="product : ${products}">
+            <div class="product-card-header">
+                <span class="category-badge" th:text="${product.category ?: 'General'}"></span>
+                <span class="stock-badge"
+                      th:classappend="${product.stock != null and product.stock < 5} ? 'low' : 'ok'"
+                      th:text="${product.stock != null} ? ${product.stock} + ' left' : 'In stock'"></span>
+            </div>
+            <div class="product-card-body">
+                <h3 class="product-name" th:text="${product.name}"></h3>
+                <p class="product-description" th:text="${product.description ?: 'No description available'}"></p>
+                <div class="product-price" th:text="'€' + ${#numbers.formatDecimal(product.price, 1, 2)}"></div>
+            </div>
+            <div class="product-card-footer">
+                <a th:href="@{/cart/add/{id}(id=${product.id})}" class="btn btn-success btn-sm"
+                   th:classappend="${product.stock != null and product.stock == 0} ? ' disabled' : ''">
+                    🛒 Add to Cart
+                </a>
+                <div class="admin-actions" sec:authorize="isAuthenticated()">
+                    <a th:href="@{/products/edit/{id}(id=${product.id})}" class="btn btn-warning btn-sm">✏️</a>
+                    <a th:href="@{/products/delete/{id}(id=${product.id})}" class="btn btn-danger btn-sm"
+                       onclick="return confirm('Delete this product?')">🗑️</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="empty-state" th:if="${#lists.isEmpty(products)}">
+        <div class="empty-icon">📦</div>
+        <h2>No products found</h2>
+        <p>Try adjusting your search or filters</p>
+        <a th:href="@{/products}" class="btn btn-primary">Clear Filters</a>
+    </div>
+</main>
+
+<script src="/js/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<div th:fragment="navbar">
+<nav class="navbar">
+    <div class="nav-brand">
+        <a th:href="@{/products}" class="brand-link">🛍️ ShopCart</a>
+    </div>
+
+    <div class="nav-center">
+        <form th:action="@{/products}" method="get" class="search-form">
+            <input type="text" name="q" th:value="${q}" placeholder="Search products..." />
+            <select name="category">
+                <option value="all">All Categories</option>
+                <option th:each="cat : ${categories}" th:value="${cat}" th:text="${cat}"
+                        th:selected="${cat == selectedCategory}"></option>
+            </select>
+            <input type="number" name="minPrice" th:value="${minPrice}" placeholder="Min €" min="0" step="0.01" />
+            <input type="number" name="maxPrice" th:value="${maxPrice}" placeholder="Max €" min="0" step="0.01" />
+            <button type="submit" class="search-btn">🔍</button>
+        </form>
+    </div>
+
+    <div class="nav-right">
+        <a th:href="@{/cart}" class="cart-link">
+            🛒 Cart
+            <span class="cart-badge" th:if="${cartCount != null and cartCount > 0}" th:text="${cartCount}"></span>
+        </a>
+        <form th:action="@{/logout}" method="post" style="display:inline">
+            <button type="submit" class="logout-btn">Logout</button>
+        </form>
+        <button id="theme-toggle" class="theme-btn" title="Toggle theme">🌞</button>
+    </div>
+</nav>
+</div>

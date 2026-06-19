@@ -1,0 +1,12 @@
+INSERT INTO product (name, price, category, description, stock) VALUES ('iPhone 15 Pro', 1199.99, 'Electronics', 'Latest Apple flagship with titanium design', 10);
+INSERT INTO product (name, price, category, description, stock) VALUES ('Samsung Galaxy S24', 999.99, 'Electronics', 'Android powerhouse with AI features', 8);
+INSERT INTO product (name, price, category, description, stock) VALUES ('Sony WH-1000XM5', 349.99, 'Electronics', 'Best-in-class noise cancelling headphones', 15);
+INSERT INTO product (name, price, category, description, stock) VALUES ('Nike Air Max 270', 149.99, 'Clothing', 'Iconic Nike sneakers with Air cushioning', 25);
+INSERT INTO product (name, price, category, description, stock) VALUES ('Adidas Ultraboost 23', 179.99, 'Clothing', 'Premium running shoes with Boost technology', 20);
+INSERT INTO product (name, price, category, description, stock) VALUES ('Levi 501 Jeans', 89.99, 'Clothing', 'Classic straight-fit denim jeans', 30);
+INSERT INTO product (name, price, category, description, stock) VALUES ('The Pragmatic Programmer', 49.99, 'Books', 'Essential guide for software developers', 50);
+INSERT INTO product (name, price, category, description, stock) VALUES ('Clean Code', 44.99, 'Books', 'A handbook of agile software craftsmanship', 45);
+INSERT INTO product (name, price, category, description, stock) VALUES ('MacBook Air M3', 1299.99, 'Electronics', 'Ultra-thin laptop with Apple M3 chip', 3);
+INSERT INTO product (name, price, category, description, stock) VALUES ('AirPods Pro 2', 249.99, 'Electronics', 'Active noise cancellation earbuds', 4);
+INSERT INTO product (name, price, category, description, stock) VALUES ('Yoga Mat Premium', 39.99, 'Sports', 'Non-slip eco-friendly yoga mat', 60);
+INSERT INTO product (name, price, category, description, stock) VALUES ('Protein Whey Gold', 59.99, 'Sports', '100% whey protein chocolate flavor 2kg', 35);
