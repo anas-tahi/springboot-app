@@ -1,12 +1,15 @@
 # Spring Boot REST API ☕
-**LIVE demo URL: https://springboot-app-sqei.onrender.com **
-> A **production-ready RESTful API** built with Spring Boot — clean architecture, JPA, and full CRUD endpoints.
+
+> A **production-ready RESTful API** built with Spring Boot — clean architecture, JPA, and full CRUD endpoints. Live on Render.
 
 <div align="center">
 
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white)
+![Render](https://img.shields.io/badge/Live_on_Render-46E3B7?style=for-the-badge&logo=render&logoColor=black)
+
+**[🌐 Live API → springboot-app-sqei.onrender.com](https://springboot-app-sqei.onrender.com)**
 
 </div>
 
@@ -18,7 +21,7 @@
 - 🗄️ JPA + Hibernate for database layer
 - 🔐 Input validation and error handling
 - 🏗️ Clean layered architecture (Controller → Service → Repository)
-- 📦 Maven build system
+- ☁️ Deployed live on Render
 
 ## 🏗️ Architecture
 
